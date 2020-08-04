@@ -1,28 +1,420 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <router-view  />
+    <Footer />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+<script>
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  
+  name: "app",
+  components:{
+   Header,
+   Footer
+
+  },
+  data(){
+    return {
+      madol:{
+      home:{
+      slider:{
+        urls:[
+          "https://image-cdn.essentiallysports.com/wp-content/uploads/20200626165844/Untitled-design-1-2-1600x900.jpg"
+        ],
+        title: [
+          "Avengers",
+          "END GAME"
+        ],
+      },
+      featured:[
+          {
+            id:1,
+            img: 'https://www.screengeek.net/wp-content/uploads/2019/08/terminator-dark-fate.jpg',
+            title: "Terminator"
+          },
+          {
+            id:2,
+            img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+            title: "Time"
+          },
+          {
+            id:3,
+            img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+            title: "Venom"
+          },
+          {
+            id:2,
+            img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+            title: "Time"
+          },
+          {
+            id:3,
+            img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+            title: "Venom"
+          }   
+      ],
+      newarrival:[
+        {
+          id:1,
+          img: 'https://image.tmdb.org/t/p/w500/sJKcpT5LRuCdGpWm29yH2bMWqT0.jpg',
+          title: "Hacker"
+        },
+        {
+          id:2,
+          img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+          title: "Time"
+        },
+        {
+          id:3,
+          img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+          title: "Venom"
+        },
+        {
+          id:4,
+          img: 'https://image.tmdb.org/t/p/w500/sJKcpT5LRuCdGpWm29yH2bMWqT0.jpg',
+          title: "Hacker"
+        },
+        {
+          id:5,
+          img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+          title: "Time"
+        },
+        {
+          id:6,
+          img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+          title: "Venom"
+        }  
+    ],
+            
+    },
+    series:{
+      slider:{
+        urls:[
+          "https://images.justwatch.com/backdrop/10573937/s1440/the-dark-tower",
+          "https://www.joblo.com/newsimages1/avengers-infinity-war-main.jpg"
+        ],
+        title: [
+          "Dark Tower",
+          ""
+        ]
+      },
+      all:[
+        {
+          id:1,
+          img: 'https://image.tmdb.org/t/p/w500/sJKcpT5LRuCdGpWm29yH2bMWqT0.jpg',
+          title: "Hacker"
+        },
+        {
+          id:2,
+          img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+          title: "Time"
+        },
+        {
+          id:3,
+          img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+          title: "Venom"
+        },
+        {
+          id:4,
+          img: 'https://image.tmdb.org/t/p/w500/sJKcpT5LRuCdGpWm29yH2bMWqT0.jpg',
+          title: "Hacker"
+        },
+        {
+          id:5,
+          img: 'https://upload.wikimedia.org/wikipedia/en/f/fe/1917_%282019%29_Film_Poster.jpeg',
+          title: "Time"
+        },
+        {
+          id:6,
+          img: 'https://www.screengeek.net/wp-content/uploads/2018/12/venom-movie.jpg',
+          title: "Venom"
+        }  
+    ],      
+    }
+    }
+  }
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color:white;
+  text-decoration: none !important;
+}
+.w-100{
+  width:100%;
+}
+.p-1{
+  padding: 10px;
+}
+.pr-1{
+  padding-right:10px;
+}
+
+.mb-6{
+  margin-bottom: 60px;
+}
+.mt-6{
   margin-top: 60px;
+}
+.flex{
+  display: flex;
+}
+.w-50{
+  width: 50%;
+}
+.ai-c{
+  align-items:center;
+}
+.p-relative{
+  position:relative;
+}
+.justify-sb{
+  justify-content: space-between;
+}
+.justify-se{
+  justify-content: space-evenly;
+}
+.r-curve{
+  border-radius: 50px;
+  border:1px solid white
+}
+.btn-trans{
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.hide-scroll::-webkit-scrollbar {
+ display: none;
+  }
+  .grey{
+    color:rgb(149, 149, 149);
+  }
+/* Header Styling */
+header{
+  position: fixed;
+  width:100%;
+  background: rgb(19, 18, 18);
+  color:white;
+  padding: 15px 0;
+  box-shadow: 1px 1px 5px rgb(47, 47, 47);
+  z-index: 1;
+}
+header nav{
+  display: flex;
+  justify-content: space-evenly;
+ align-items: center; 
+  padding:0 20px;
+}
+nav.mobile{
+  display: none;
+}
+header nav .nav-links{
+  list-style: none;
+  justify-content: space-evenly;
+}
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+
+header nav .nav-links .link{
+  color:white;
+  padding:10px 15px;
+  transition: border 200ms 200ms ease-in-out,
+              padding 300ms 300ms ease-in;
+}
+header nav .nav-links a.router-link-exact-active{
+  border-bottom: 3px solid  rgb(36, 204, 175);
+  padding-bottom: 23px;
+}
+header nav .nav-links .link:hover{
+  border-bottom: 3px solid  rgb(36, 204, 175);
+  padding-bottom: 23px;
+}
+header .img-round{
+  border-radius:50%;
+  width:40px;
+  height:40px;
+}
+
+header nav #search i{
+  cursor: pointer;
+}
+
+.outer-layer{
+  position: relative;
+  color:white;
+  max-height: 100vh;
+  height:90vh;
+  width: 100%;
+  overflow: hidden;
+}
+.inner-layer{
+  box-sizing: border-box;
+  position:absolute;
+  top:0;  
+  padding: 30px;
+  width: 100vw;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.452);
+}
+
+.inner-layer .details{
+  padding: 150px 50px;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+.inner-layer .details div:first-child{padding: 15px 0;}
+.inner-layer .details h1{font-size: 70px;}
+.inner-layer .details h3{font-size: 20px;}
+
+.inner-layer .details div:nth-child(2){
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0 0 50px 0;
+}
+
+.inner-layer .details div:last-child{padding: 50px 0; font-weight: 700;}
+.inner-layer .details div:last-child a i{padding: 0 15px 0 0;}
+
+
+.watch-link{
+  padding: 20px 40px;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 12px;
+  font-size: 18px;
+  transition: background 500ms 200ms ease-in-out,
+              border 400ms 100ms ease-in;
+  color: white !important;
+}
+.watch-link:hover{
+  background: rgb(36, 204, 175);
+  border:1px solid rgb(36, 204, 175);
+}
+
+
+
+@media screen and (max-width:790px){
+  header{
+    padding-bottom: 0;
+  }
+  nav.desktop{
+    display: none;
+  }
+  nav.mobile{
+    display: block;
+    padding-bottom: 0;
+  }
+
+  nav.mobile .nav-links{
+    overflow-y: visible;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+    
+  }
+  header nav .nav-links .link{
+    color:white;
+    font-size: 13px;
+    padding:2px 15px;
+    transition: border 200ms 200ms ease-in-out,
+                padding 300ms 300ms ease-in;
+  }
+  header nav .nav-links a.router-link-exact-active{
+  padding-bottom: 5px;
+}
+  header nav .nav-links .link:hover{
+    border-bottom: 3px solid  rgb(36, 204, 175);
+    padding-bottom: 5px;
+  }
+  .catebar a{
+    font-size:13px;
+  }
+}
+/* End  of Header Styling*/
+/* Main Styling */
+main{
+  background:#000706;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 50px;
+}
+.mov-outer img{
+  height:200px;
+  border: none;
+  transition: border 700ms  100ms ease-in-out,
+              width 300ms 400ms ease-in-out,
+              height 300ms 400ms ease-in-out;
+  overflow: hidden;
+
+}
+.mov-outer-alt img{
+  height:200px;
+  border: none;
+  transition: border 700ms  100ms ease-in-out;
+}
+.mov-outer-alt:hover > img{border: 2px solid rgb(36, 204, 175);}
+
+.mov-outer:hover > img{
+  border: 2px solid rgb(36, 204, 175);
+  width: 350px;
+  height:210px;
+}
+
+.cat-outer{
+  height: 300px;
+  border: none;
+  transition: border 700ms  100ms ease-in-out;  
+}
+.cat-outer:hover > img{border: 2px solid rgb(76, 190, 171);}
+
+.cat-outer:hover .mov-inner .mov-details{transition: top 700ms 100ms ease-in-out;}
+.cat-outer:hover > .mov-inner .mov-details{
+  position: absolute;
+  bottom: 100px;
+  left: 10px;
+}
+
+.catebar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.catebar ul li a{
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: default;
+}
+.catebar ul li a.active{
+  background-color: rgb(5, 81, 168);
+}
+
+/* Footer Styling */
+footer{
+  background:#000706;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow:hidden;
+  border-top: 1px solid grey;
+}
+footer .foot {
+  padding: 30px 40px;
+}
+footer .foot a{
+  color: white;
 }
 </style>
